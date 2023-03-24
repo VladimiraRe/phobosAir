@@ -34,7 +34,7 @@ wsl --install
 wsl --set-default-version 2
 ```
 
-* Скачать и установить себе *Windows Terminal Preview* из Microsoft Store
+* Скачать и установить себе *Windows Terminal Preview*, *Ubuntu* из Microsoft Store
 * Поставить себе в настройках *Windows Terminal Preview*>*Профиль по умолчанию* выбрать **Ubuntu**
 * Установить [yarn](https://yarnpkg.com/)
 
