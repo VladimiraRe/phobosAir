@@ -1,0 +1,76 @@
+{
+  "name": "phobos_air",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "npx prettier --write ./src",
+    "lint": "npx eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint ./src --fix",
+    "prepare": "husky install",
+    "test": "vitest"
+  },
+  "lint-staged": {
+    "*.(ts|tsx)": [
+      "yarn lint:fix",
+      "yarn format"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js",
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy"
+    },
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(ts|tsx)$": "babel-jest"
+    },
+    "verbose": true
+  },
+  "dependencies": {
+    "axios": "^1.3.4",
+    "dayjs": "^1.11.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/node": "^18.15.7",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/ui": "^0.29.7",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "jsdom": "^21.1.1",
+    "lint-staged": "^13.2.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-tsconfig-paths": "^4.0.7",
+    "vitest": "^0.29.7"
+  }
+}
