@@ -2,7 +2,7 @@ import { beforeEach, describe, test, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Input from '@common/input/input';
+import Input from '@common/Input/Input';
 
 const labelText = 'Название поля';
 const testText = 'test';
