@@ -10,4 +10,8 @@
   },
   "scm.alwaysShowActions": true,
   "editor.formatOnSave": true,
+  "cSpell.words": [
+    "tailwindcss",
+    "отрендерен"
+  ],
 }
