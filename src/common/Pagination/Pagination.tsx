@@ -65,7 +65,7 @@ const Pagination = ({
     const leftSiblingIndex = Math.max(current - 1, 1);
     const rightSiblingIndex = Math.min(current + 1, totalPages);
 
-    const shouldShowLeftDots = leftSiblingIndex > 2;
+    const shouldShowLeftDots = leftSiblingIndex > 3;
     const shouldShowRightDots = rightSiblingIndex < totalPages - 2;
 
     const firstPageIndex = 1;
@@ -78,7 +78,7 @@ const Pagination = ({
     }
 
     if (shouldShowLeftDots && !shouldShowRightDots) {
-      const rightRange = range(totalPages - 6, totalPages);
+      const rightRange = range(totalPages - 4, totalPages);
       return [firstPageIndex, threeDots, ...rightRange];
     }
 
@@ -99,18 +99,18 @@ const Pagination = ({
 
     if (Array.isArray(paginationRangeElements)) {
       const elements = paginationRangeElements.map(
-        (pageNumber: number | string | undefined) => {
+        (pageNumber: number | string | undefined, index) => {
           return (
             <li
-              key={pageNumber}
+              key={index}
               className={
                 pageNumber === current
-                  ? 'relative z-10 inline-flex items-center text-sm bg-blue-500 font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded-sm  ring-1 ring-inset ring-gray-300'
-                  : 'relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 rounded-sm bg-gray-50 hover:bg-gray-100 focus:z-20 focus:outline-offset-0'
+                  ? 'relative inline-flex items-center text-sm font-semibold text-[#fff] rounded-sm ring-inset ring-[#DEDEDE] bg-[#398AEA]'
+                  : 'relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset  rounded-sm bg-[#dfdfdf36] ring-[#DEDEDE] hover:bg-gray hover:text-[#fff]'
               }
             >
               <button
-                key={pageNumber}
+                key={index}
                 className="px-4 py-2"
                 aria-current={pageNumber === current ? true : false}
                 type="button"
@@ -133,13 +133,13 @@ const Pagination = ({
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
           <nav
-            className="isolate inline-flex -space-x-px rounded-md shadow-sm gap-1"
+            className="isolate inline-flex -space-x-px rounded-md gap-1"
             aria-label="Pagination"
             role="navigation"
           >
             <ul className="flex gap-1">
               {current > 2 ? (
-                <li className="relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 rounded-sm bg-gray-50 hover:bg-gray-100 focus:z-20 focus:outline-offset-0">
+                <li className="relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-[#DEDEDE] rounded-sm  bg-[#dfdfdf36] hover:bg-gray hover:text-[#fff]">
                   <button className="px-3 py-3" onClick={onFirst}>
                     <span className="sr-only">First page</span>
                     <DoubleArrowLeft translateX={1} />
@@ -147,7 +147,7 @@ const Pagination = ({
                 </li>
               ) : null}
               {current > 1 ? (
-                <li className="relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 rounded-sm bg-gray-50 hover:bg-gray-100 focus:z-20 focus:outline-offset-0">
+                <li className="relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-[#DEDEDE] rounded-sm bg-[#dfdfdf36] hover:bg-gray hover:text-[#fff]">
                   <button className="px-4 py-3" onClick={onPrevious}>
                     <span className="sr-only">Previous</span>
                     <ArrowLeft
@@ -162,7 +162,7 @@ const Pagination = ({
               ) : null}
               {renderPagination()}
               {current < Math.ceil(total / pageSize) ? (
-                <li className="relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 rounded-sm bg-gray-50 hover:bg-gray-100 focus:z-20 focus:outline-offset-0">
+                <li className="relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-[#DEDEDE] rounded-sm bg-[#dfdfdf36] hover:bg-gray hover:text-[#fff]">
                   <button className="px-4 py-3" onClick={onNext}>
                     <span className="sr-only">Next</span>
                     <ArrowLeft
@@ -176,7 +176,7 @@ const Pagination = ({
                 </li>
               ) : null}
               {current < Math.ceil(total / pageSize) - 1 ? (
-                <li className="relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 rounded-sm bg-gray-50 hover:bg-gray-100 focus:z-20 focus:outline-offset-0">
+                <li className="relative inline-flex items-center text-sm font-semibold text-gray-900 ring-1 ring-inset ring-[#DEDEDE] rounded-sm bg-[#dfdfdf36] hover:bg-gray hover:text-[#fff]">
                   <button className="px-3 py-3" onClick={onLast}>
                     <span className="sr-only">Last page</span>
                     <DoubleArrowLeft
