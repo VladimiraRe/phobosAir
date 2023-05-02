@@ -1,9 +1,9 @@
-import {
-  ValidationFunk,
-  ValidationObj,
+import type { ValueType } from '@/interfaces/form-fields';
+import type {
+  IValidationObj,
+  ValidationFunkType,
   ValidationType,
-  ValueType,
-} from '@/interfaces/form-fields';
+} from '@/interfaces/validation';
 
 type ValidateResultType = { result: boolean; message?: string };
 
@@ -131,9 +131,9 @@ export function validateValue(value: string, validation: ValidationType) {
 }
 
 function getResult(
-  validation: keyof typeof validate | ValidationObj | ValidationFunk,
+  validation: keyof typeof validate | IValidationObj | ValidationFunkType,
   value: string | number,
-  props?: Omit<ValidationObj, 'type'>
+  props?: Omit<IValidationObj, 'type'>
 ): ValidateResultType {
   if (typeof validation === 'object') {
     const { type, ...other } = validation;

@@ -1,4 +1,5 @@
-import { ValueType, formattingType } from '@/interfaces/form-fields';
+import type { ValueType } from '@/interfaces/form-fields';
+import type { formattingType } from '@/interfaces/formatting';
 
 export const toUppercase = (value: string | number) =>
   String(value).toUpperCase();
