@@ -1,7 +1,7 @@
 import type { formattingType } from './formatting';
 import { ValidationType } from './validation';
 
-type inputType =
+export type inputType =
   | 'date'
   | 'datetime-local'
   | 'tel'
