@@ -4,15 +4,17 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      'gray': '#D9D9D9',
+      gray: '#D9D9D9',
       'dark-gray': '#393939',
       'light-gray': '#F9F9F9',
-      'blue': '#0A66C2',
-      'white': '#FFFFFF'
+      'middle-gray': '#818080',
+      blue: '#0A66C2',
+      white: '#FFFFFF',
+      alarm: '#BD0909',
     },
     fontFamily: {
-      'sans': ['Inter', 'sans-serif'],
-      'open-sans': ['Open Sans', 'sans-serif']
+      sans: ['Inter', 'sans-serif'],
+      'open-sans': ['Open Sans', 'sans-serif'],
     },
   },
   plugins: [],
